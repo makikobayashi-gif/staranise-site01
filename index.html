@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>STARANISE G.K. — Content Strategy &amp; SEO, Tokyo</title>
+<meta name="description" content="コンテンツ戦略・SEOコンサルティング・ブランドストーリーテリング。東京を拠点に活動するコンテンツスタジオ。" />
+<meta property="og:title" content="STARANISE G.K. — Content Strategy &amp; SEO, Tokyo" />
+<meta property="og:description" content="コンテンツ戦略・SEOコンサルティング・ブランドストーリーテリング。東京を拠点に活動するコンテンツスタジオ。" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --ink: #3D2B1F;
+    --spice: #C4956A;
+    --sage: #5C7A54;
+    --rule: #E8E0D5;
+    --ink-soft: #6b5447;
+    --paper: #f4eee3;
+
+    --max: 1320px;
+    --gutter: clamp(24px, 5vw, 80px);
+
+    --serif: "Cormorant Garamond", "Noto Serif JP", serif;
+    --sans-jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    --sans: "Inter", "Noto Sans JP", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+
+    --accent: var(--sage);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans-jp);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--spice); color: var(--bg); }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  /* ========== NAV ========== */
+  .nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    padding: 22px 0;
+    backdrop-filter: blur(8px);
+    background: color-mix(in oklab, var(--bg) 78%, transparent);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease, padding .3s ease;
+  }
+  .nav.scrolled { border-bottom-color: var(--rule); padding: 14px 0; }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 14px;
+    font-family: var(--serif);
+    font-size: 22px;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+  }
+  .brand-mark {
+    width: 28px; height: 28px;
+    display: inline-block;
+    color: var(--accent);
+    flex: none;
+  }
+  .brand small {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    margin-left: 4px;
+    font-weight: 400;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 36px;
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+  .nav-links a {
+    position: relative;
+    padding: 4px 0;
+    color: var(--ink);
+    transition: color .25s ease;
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute; left: 0; right: 100%; bottom: 0;
+    height: 1px; background: var(--accent);
+    transition: right .35s ease;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { right: 0; }
+  .nav-links .lang {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    border: 1px solid var(--rule);
+    padding: 6px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    background: transparent;
+    color: var(--ink);
+    display: inline-flex; gap: 6px; align-items: center;
+    transition: border-color .25s ease, color .25s ease;
+  }
+  .nav-links .lang:hover { border-color: var(--accent); color: var(--accent); }
+  .nav-links .lang span { opacity: .35; transition: opacity .2s ease; }
+  .nav-links .lang span.active { opacity: 1; }
+
+  .nav-cta {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    padding: 10px 18px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    color: var(--ink);
+    transition: background .25s ease, color .25s ease;
+  }
+  .nav-cta:hover { background: var(--ink); color: var(--bg); }
+
+  @media (max-width: 820px) {
+    .nav-links { gap: 18px; }
+    .nav-links .hide-sm { display: none; }
+    .nav-cta { display: none; }
+    .brand small { display: none; }
+  }
+
+  /* ========== HERO ========== */
+  .hero {
+    padding: clamp(140px, 18vh, 200px) 0 clamp(80px, 10vh, 140px);
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 60px;
+    align-items: end;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: inline-flex; align-items: center; gap: 14px;
+    margin-bottom: 48px;
+  }
+  .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+  }
+  .eyebrow .sep {
+    width: 28px; height: 1px; background: var(--rule);
+  }
+  h1.catchcopy {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(48px, 7.4vw, 112px);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin: 0 0 32px;
+    color: var(--ink);
+  }
+  h1.catchcopy em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+  .catchcopy-jp {
+    font-family: var(--sans-jp);
+    font-weight: 400;
+    font-size: clamp(20px, 2.3vw, 30px);
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin: 0 0 48px;
+    max-width: 36ch;
+  }
+  .catchcopy-jp .accent { color: var(--accent); }
+  .hero-divider {
+    width: 60px; height: 1px; background: var(--ink);
+    margin: 0 0 28px;
+  }
+  .hero-lede {
+    font-family: var(--sans-jp);
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    max-width: 44ch;
+    margin: 0 0 56px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    font-family: var(--sans);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    padding: 16px 28px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: all .3s ease;
+    display: inline-flex; align-items: center; gap: 10px;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--ink); color: var(--bg);
+    border-color: var(--ink);
+  }
+  .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+  .btn-primary .arrow { transition: transform .3s ease; }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+  .btn-ghost {
+    background: transparent; color: var(--ink);
+    border-color: var(--rule);
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  .hero-meta {
+    align-self: end;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    line-height: 2;
+    text-transform: uppercase;
+  }
+  .hero-meta b { color: var(--ink); font-weight: 500; }
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-meta { text-align: left; }
+  }
+
+  /* Star anise mark — 8 arms + center dot */
+  .anise {
+    position: relative;
+    display: inline-block;
+    width: 1em; height: 1em;
+    color: currentColor;
+  }
+  .anise i {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 1em; height: 1px;
+    background: currentColor;
+    transform-origin: left center;
+    transform: translate(0, -50%) rotate(var(--r));
+    opacity: .9;
+  }
+  .anise i::after {
+    content: "";
+    position: absolute; right: 0; top: 50%;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    transform: translate(50%, -50%);
+  }
+  .anise .core {
+    position: absolute; left: 50%; top: 50%;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Ambient hero motif */
+  .hero-motif {
+    position: absolute;
+    right: clamp(-40px, -2vw, 0px);
+    top: clamp(120px, 16vh, 180px);
+    width: clamp(180px, 24vw, 320px);
+    height: clamp(180px, 24vw, 320px);
+    color: var(--accent);
+    opacity: .14;
+    pointer-events: none;
+    animation: spin 90s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (max-width: 980px) { .hero-motif { display: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-motif { animation: none; }
+    .ticker-track { animation: none; }
+    .reveal { transition: none; }
+  }
+
+  /* ========== TICKER ========== */
+  .ticker {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 22px 0;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .ticker-track {
+    display: flex; gap: 64px;
+    white-space: nowrap;
+    animation: marquee 50s linear infinite;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .ticker-track span { display: inline-flex; align-items: center; gap: 16px; }
+  .ticker-track span .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ========== SECTION HEAD ========== */
+  .section { padding: clamp(100px, 14vh, 180px) 0; }
+  .section-head {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: baseline;
+    margin-bottom: 80px;
+  }
+  .section-index {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .section-index b {
+    color: var(--accent);
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 4.6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.005em;
+    margin: 0 0 16px;
+  }
+  .section-title em { font-style: italic; color: var(--accent); font-weight: 300; }
+  .section-title-jp {
+    font-family: var(--sans-jp);
+    font-weight: 400;
+    font-size: clamp(15px, 1.4vw, 17px);
+    color: var(--ink-soft);
+    letter-spacing: 0.06em;
+    margin: 0;
+  }
+  @media (max-width: 720px) {
+    .section-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 56px; }
+  }
+
+  /* ========== SERVICES ========== */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .service {
+    padding: 56px 36px 56px 0;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    transition: padding .35s ease;
+    cursor: pointer;
+  }
+  .service + .service { padding-left: 36px; border-left: 1px solid var(--rule); }
+  .service:hover { padding-top: 48px; }
+  .service-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .service-num .arrow {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: all .3s ease;
+    color: var(--ink-soft);
+    font-size: 12px;
+    line-height: 1;
+  }
+  .service:hover .service-num .arrow {
+    background: var(--accent); border-color: var(--accent); color: var(--bg);
+    transform: rotate(-45deg);
+  }
+  .service h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 2.6vw, 36px);
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    margin: 0 0 6px;
+  }
+  .service h3 em { font-style: italic; color: var(--accent); font-weight: 300; }
+  .service .jp {
+    font-family: var(--sans-jp);
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    margin: 0 0 28px;
+  }
+  .service p {
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    margin: 0 0 32px;
+    max-width: 32ch;
+  }
+  .service ul {
+    list-style: none;
+    padding: 0; margin: 0;
+    border-top: 1px dashed var(--rule);
+    padding-top: 20px;
+  }
+  .service ul li {
+    font-family: var(--sans-jp);
+    font-size: 13px;
+    color: var(--ink);
+    padding: 8px 0;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .service ul li::before {
+    content: ""; width: 4px; height: 4px;
+    border-radius: 50%; background: var(--accent);
+    flex: none;
+  }
+  @media (max-width: 920px) {
+    .services { grid-template-columns: 1fr; }
+    .service + .service { padding-left: 0; border-left: none; }
+    .service { padding: 40px 0; }
+  }
+
+  /* ========== ABOUT ========== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: start;
+  }
+  .about-visual {
+    aspect-ratio: 4 / 5;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        var(--paper) 0 14px,
+        transparent 14px 28px
+      ),
+      var(--paper);
+    border: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-visual .label {
+    position: absolute;
+    top: 20px; left: 20px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .about-visual .label-2 {
+    position: absolute;
+    bottom: 20px; right: 20px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    color: var(--ink-soft);
+  }
+  .about-visual .anise-big {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%; height: 40%;
+    color: var(--accent);
+    opacity: .55;
+  }
+  .about-body p {
+    font-family: var(--sans-jp);
+    font-size: 16px;
+    line-height: 1.95;
+    color: var(--ink);
+    margin: 0 0 20px;
+  }
+  .about-body p.lead {
+    font-family: var(--serif);
+    font-size: clamp(22px, 2.2vw, 28px);
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 32px;
+    font-weight: 400;
+  }
+  .about-body p.lead em { font-style: italic; color: var(--accent); }
+
+  .principles {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    border-top: 1px solid var(--rule);
+    padding-top: 32px;
+  }
+  .principle .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .principle h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0 0 6px;
+  }
+  .principle p {
+    font-family: var(--sans-jp);
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  @media (max-width: 880px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { max-width: 420px; }
+    .principles { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  /* ========== CONTACT ========== */
+  .contact {
+    background: var(--ink);
+    color: var(--bg);
+    padding: clamp(100px, 14vh, 160px) 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 90% 20%, color-mix(in oklab, var(--spice) 22%, transparent), transparent 60%);
+    pointer-events: none;
+  }
+  .contact .wrap { position: relative; }
+  .contact .section-index { color: color-mix(in oklab, var(--bg) 55%, transparent); }
+  .contact .section-index b { color: var(--spice); }
+  .contact .section-title { color: var(--bg); }
+  .contact .section-title em { color: var(--spice); }
+  .contact .section-title-jp { color: color-mix(in oklab, var(--bg) 60%, transparent); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: start;
+  }
+  .contact-email {
+    display: inline-block;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(40px, 5.6vw, 84px);
+    line-height: 1.05;
+    color: var(--bg);
+    border-bottom: 1px solid color-mix(in oklab, var(--bg) 30%, transparent);
+    padding-bottom: 12px;
+    margin: 8px 0 32px;
+    transition: color .3s ease, border-color .3s ease;
+  }
+  .contact-email:hover { color: var(--spice); border-color: var(--spice); }
+  .contact-sub {
+    font-family: var(--sans-jp);
+    font-size: 15px;
+    line-height: 1.85;
+    color: color-mix(in oklab, var(--bg) 75%, transparent);
+    max-width: 44ch;
+    margin: 0 0 48px;
+  }
+  .contact-info {
+    border-top: 1px solid color-mix(in oklab, var(--bg) 18%, transparent);
+    padding-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 32px;
+  }
+  .contact-info dt {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, var(--bg) 55%, transparent);
+    margin-bottom: 8px;
+  }
+  .contact-info dd {
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--bg);
+    margin: 0;
+  }
+
+  /* Form */
+  .contact-form {
+    background: color-mix(in oklab, var(--bg) 6%, transparent);
+    border: 1px solid color-mix(in oklab, var(--bg) 18%, transparent);
+    border-radius: 4px;
+    padding: 32px;
+    backdrop-filter: blur(4px);
+  }
+  .contact-form h4 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0 0 4px;
+    color: var(--bg);
+  }
+  .contact-form .h-jp {
+    font-family: var(--sans-jp);
+    font-size: 12px;
+    color: color-mix(in oklab, var(--bg) 55%, transparent);
+    letter-spacing: 0.06em;
+    margin-bottom: 24px;
+  }
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, var(--bg) 55%, transparent);
+    margin-bottom: 8px;
+  }
+  .field input, .field textarea, .field select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid color-mix(in oklab, var(--bg) 25%, transparent);
+    color: var(--bg);
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    padding: 8px 0;
+    outline: none;
+    transition: border-color .25s ease;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+  .field textarea { resize: vertical; min-height: 60px; }
+  .field input::placeholder, .field textarea::placeholder {
+    color: color-mix(in oklab, var(--bg) 35%, transparent);
+  }
+  .field input:focus, .field textarea:focus, .field select:focus {
+    border-color: var(--spice);
+  }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .field select option { color: var(--ink); background: var(--bg); }
+
+  .submit {
+    width: 100%;
+    margin-top: 12px;
+    padding: 16px;
+    background: var(--spice);
+    color: var(--ink);
+    border: none;
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .25s ease;
+    border-radius: 2px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  }
+  .submit:hover { background: var(--bg); }
+  .submit.sent { background: var(--sage); color: var(--bg); }
+
+  @media (max-width: 880px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .field-row { grid-template-columns: 1fr; gap: 0; }
+  }
+
+  /* ========== FOOTER ========== */
+  footer.foot {
+    background: var(--ink);
+    color: color-mix(in oklab, var(--bg) 60%, transparent);
+    border-top: 1px solid color-mix(in oklab, var(--bg) 12%, transparent);
+    padding: 40px 0;
+  }
+  .foot-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .foot-inner a { transition: color .2s ease; }
+  .foot-inner a:hover { color: var(--spice); }
+
+  /* ========== REVEAL ========== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ========== LANG TOGGLE ========== */
+  body.jp-mode .en-only { display: none; }
+  body.en-mode .jp-only { display: none; }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="STARANISE Home">
+      <span class="brand-mark anise" aria-hidden="true">
+        <i style="--r:0deg"></i><i style="--r:45deg"></i>
+        <i style="--r:90deg"></i><i style="--r:135deg"></i>
+        <i style="--r:180deg"></i><i style="--r:225deg"></i>
+        <i style="--r:270deg"></i><i style="--r:315deg"></i>
+        <span class="core"></span>
+      </span>
+      STARANISE <small>G.K.</small>
+    </a>
+    <nav class="nav-links">
+      <a href="#services" class="hide-sm">Services</a>
+      <a href="#about" class="hide-sm">About</a>
+      <a href="#contact" class="hide-sm">Contact</a>
+      <button class="lang" id="lang-toggle" type="button" aria-label="Toggle language">
+        <span data-lang="en" class="active">EN</span><span>/</span><span data-lang="jp">JP</span>
+      </button>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-motif anise" aria-hidden="true">
+    <i style="--r:0deg"></i><i style="--r:45deg"></i>
+    <i style="--r:90deg"></i><i style="--r:135deg"></i>
+    <i style="--r:180deg"></i><i style="--r:225deg"></i>
+    <i style="--r:270deg"></i><i style="--r:315deg"></i>
+    <span class="core"></span>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow reveal">
+          <span class="dot"></span>
+          <span>Content Strategy &amp; SEO</span>
+          <span class="sep"></span>
+          <span>Tokyo · 東京</span>
+        </div>
+
+        <h1 class="catchcopy reveal">
+          Content <em>shapes</em><br />
+          brands.
+        </h1>
+        <p class="catchcopy-jp reveal">
+          コンテンツで、<span class="accent">ブランドを育てる。</span>
+        </p>
+
+        <div class="hero-divider reveal"></div>
+        <p class="hero-lede reveal">
+          <span class="en-only">STARANISE G.K. is a Tokyo-based content &amp; SEO studio helping brands build lasting presence — in both English and Japanese.</span>
+          <span class="jp-only">東京を拠点に、日英バイリンガルのコンテンツ戦略・SEO・ブランドストーリーを手がけるスタジオです。</span>
+          <span class="en-only jp-only" style="display:block; margin-top: 12px;"><!-- both mode fallback --></span>
+        </p>
+        <p class="hero-lede reveal" style="display:none" id="hero-lede-both">
+          STARANISE G.K. is a Tokyo-based content &amp; SEO studio.<br />
+          東京を拠点に、日英バイリンガルのコンテンツ戦略・SEOを手がけるスタジオです。
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="#contact" class="btn btn-primary">
+            Start a conversation
+            <span class="arrow">→</span>
+          </a>
+          <a href="#services" class="btn btn-ghost">View services</a>
+        </div>
+      </div>
+
+      <aside class="hero-meta reveal">
+        <div>EST <b>2023</b></div>
+        <div>TOKYO · <b>JP</b></div>
+        <div>合同会社 <b>スターアニス</b></div>
+        <div style="margin-top: 18px; color: var(--accent);">— · — · —</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span><span class="dot"></span>Editorial Strategy</span>
+    <span><span class="dot"></span>SEO コンサルティング</span>
+    <span><span class="dot"></span>Brand Storytelling</span>
+    <span><span class="dot"></span>Bilingual Content</span>
+    <span><span class="dot"></span>Tokyo · 東京</span>
+    <span><span class="dot"></span>Keyword Research</span>
+    <span><span class="dot"></span>Content Architecture</span>
+    <span><span class="dot"></span>Editorial Strategy</span>
+    <span><span class="dot"></span>SEO コンサルティング</span>
+    <span><span class="dot"></span>Brand Storytelling</span>
+    <span><span class="dot"></span>Bilingual Content</span>
+    <span><span class="dot"></span>Tokyo · 東京</span>
+    <span><span class="dot"></span>Keyword Research</span>
+    <span><span class="dot"></span>Content Architecture</span>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-index"><b>01</b>Services</div>
+      <div>
+        <h2 class="section-title">What we <em>practice</em>.</h2>
+        <p class="section-title-jp">三つの専門領域 — 編集・検索・物語。</p>
+      </div>
+    </div>
+
+    <div class="services">
+      <article class="service reveal">
+        <div class="service-num">
+          <span>S/01</span>
+          <span class="arrow">→</span>
+        </div>
+        <h3>Content <em>Strategy</em></h3>
+        <p class="jp">コンテンツ戦略・編集設計</p>
+        <p class="en-only">
+          Editorial planning rooted in audience research and brand voice. From content calendars to long-form pillars — built to last beyond a single campaign.
+        </p>
+        <p class="jp-only">
+          「何を、誰に、どう伝えるか」を起点に、ブランドの言葉を設計します。単発のコンテンツ制作ではなく、長く機能する編集の仕組みをつくることが私たちの仕事です。
+        </p>
+        <ul>
+          <li><span class="en-only">Audience &amp; persona research</span><span class="jp-only">オーディエンス・ペルソナ設計</span></li>
+          <li><span class="en-only">Editorial calendar design</span><span class="jp-only">編集カレンダー設計</span></li>
+          <li><span class="en-only">Brand voice &amp; tone systems</span><span class="jp-only">ブランドボイス・トーン策定</span></li>
+          <li><span class="en-only">Content auditing</span><span class="jp-only">コンテンツ監査・ギャップ分析</span></li>
+        </ul>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-num">
+          <span>S/02</span>
+          <span class="arrow">→</span>
+        </div>
+        <h3>SEO <em>Consulting</em></h3>
+        <p class="jp">検索戦略・SEOコンサルティング</p>
+        <p class="en-only">
+          Technical audits, keyword strategy, and competitive analysis tuned for the Japanese market — where category nuance and language matter.
+        </p>
+        <p class="jp-only">
+          検索で見つけてもらうための設計と実装を行います。日本市場における検索行動の特性を踏まえたキーワード設計から、技術SEO監査まで一貫して担います。
+        </p>
+        <ul>
+          <li><span class="en-only">Technical SEO audits</span><span class="jp-only">テクニカルSEO監査</span></li>
+          <li><span class="en-only">JP &amp; EN keyword research</span><span class="jp-only">日英キーワードリサーチ</span></li>
+          <li><span class="en-only">Competitive landscape mapping</span><span class="jp-only">競合分析・ポジショニング</span></li>
+          <li><span class="en-only">On-page optimization</span><span class="jp-only">オンページ最適化</span></li>
+        </ul>
+      </article>
+
+      <article class="service reveal">
+        <div class="service-num">
+          <span>S/03</span>
+          <span class="arrow">→</span>
+        </div>
+        <h3>Brand <em>Storytelling</em></h3>
+        <p class="jp">ブランドの言語化・ストーリー設計</p>
+        <p class="en-only">
+          Long-form narratives that tie product to point of view. We write the through-line that makes your brand worth remembering — in both languages.
+        </p>
+        <p class="jp-only">
+          商品の背景にある思想・素材・こだわりを、読まれる言葉に変えます。ヒアリングから始まり、ブランドの強みを言語化し、伝わる構造をつくることを大切にしています。
+        </p>
+        <ul>
+          <li><span class="en-only">Origin &amp; founder narratives</span><span class="jp-only">ブランドの強み・世界観の言語化</span></li>
+          <li><span class="en-only">Brand voice guide</span><span class="jp-only">創業ストーリー・成分ストーリー</span></li>
+          <li><span class="en-only">Long-form editorial</span><span class="jp-only">長文コンテンツ制作</span></li>
+          <li><span class="en-only">Bilingual EN / JP writing</span><span class="jp-only">日英バイリンガル対応</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about" style="background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-index"><b>02</b>About</div>
+      <div>
+        <h2 class="section-title">A practice, not an <em>agency</em>.</h2>
+        <p class="section-title-jp">エージェンシーではなく、ひとつの実践として。</p>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <span class="label">FIG. 01 — Studio</span>
+        <span class="anise anise-big" aria-hidden="true">
+          <i style="--r:0deg"></i><i style="--r:45deg"></i>
+          <i style="--r:90deg"></i><i style="--r:135deg"></i>
+          <i style="--r:180deg"></i><i style="--r:225deg"></i>
+          <i style="--r:270deg"></i><i style="--r:315deg"></i>
+          <span class="core"></span>
+        </span>
+        <span class="label-2">[ studio portrait — drop image ]</span>
+      </div>
+
+      <div class="about-body reveal">
+        <p class="lead">
+          We work with brands who believe content isn't decoration — it's <em>infrastructure</em>.
+        </p>
+        <p class="en-only">
+          STARANISE was founded on a simple belief: language is product. The way a brand describes a texture, a ritual, an ingredient — that is the brand. We help teams build that language with rigor, in both English and Japanese, across editorial, search, and story.
+        </p>
+        <p class="jp-only">
+          私たちは、ブランドの言葉と検索性に向き合うコンサルティング・チームです。香り、質感、成分、儀式 — それらをどう書くかが、ブランドそのものになる。長く読まれ、長く検索される編集物を、丁寧に組み立てます。
+        </p>
+        <p style="display:none" id="about-both-en" class="en-only">
+          We keep our client list deliberately small. Every engagement gets our full attention — no handoffs, no templated thinking.
+        </p>
+        <p style="display:none" id="about-both-jp" class="jp-only">
+          クライアント数は意図的に絞り込んでいます。すべての案件に対して全力を注ぎ、定型的な思考は行いません。
+        </p>
+
+        <div class="principles">
+          <div class="principle">
+            <div class="num">01</div>
+            <h4>Slow over loud</h4>
+            <p>
+              <span class="en-only">Long-form thinking. Few projects, well done — over scaled volume.</span>
+              <span class="jp-only">長期的な権威は、静かに、時間をかけて築かれる。</span>
+            </p>
+          </div>
+          <div class="principle">
+            <div class="num">02</div>
+            <h4>Bilingual by default</h4>
+            <p>
+              <span class="en-only">Every piece is shaped for both EN and JP audiences from the first draft.</span>
+              <span class="jp-only">すべての戦略は最初から日英両言語を前提に設計する。</span>
+            </p>
+          </div>
+          <div class="principle">
+            <div class="num">03</div>
+            <h4>Category-deep</h4>
+            <p>
+              <span class="en-only">We go as deep as each industry requires — no surface-level content.</span>
+              <span class="jp-only">各業界が求める深度まで踏み込む。表面的なコンテンツは作らない。</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-index"><b>03</b>Contact</div>
+      <div>
+        <h2 class="section-title">Let's begin a <em>conversation</em>.</h2>
+        <p class="section-title-jp">はじめての一通から、お話を始めましょう。</p>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <a href="mailto:hello@staranise.jp" class="contact-email">hello@staranise.jp</a>
+        <p class="contact-sub">
+          <span class="en-only">Tell us about your brand, your timeline, and what you're hoping to achieve. We reply to every inquiry within two business days.</span>
+          <span class="jp-only">ブランドのこと、ご予算感、想い描いていること — 二営業日以内に必ずご返信いたします。</span>
+        </p>
+
+        <dl class="contact-info">
+          <div>
+            <dt>Studio</dt>
+            <dd>Minato-ku, Tokyo<br />港区, 東京</dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Mon — Fri<br />10:00 — 18:00 JST</dd>
+          </div>
+          <div>
+            <dt>Press</dt>
+            <dd>press@staranise.jp</dd>
+          </div>
+          <div>
+            <dt>Careers</dt>
+            <dd>careers@staranise.jp</dd>
+          </div>
+        </dl>
+      </div>
+
+      <form class="contact-form reveal" id="contact-form">
+        <h4>
+          <span class="en-only">Project inquiry</span>
+          <span class="jp-only">プロジェクトのご相談</span>
+        </h4>
+        <div class="h-jp">
+          <span class="en-only">プロジェクトのご相談</span>
+          <span class="jp-only">Project inquiry</span>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Name / お名前</label>
+            <input id="f-name" type="text" placeholder="Your full name" required />
+          </div>
+          <div class="field">
+            <label for="f-brand">Brand / ブランド</label>
+            <input id="f-brand" type="text" placeholder="Brand or company" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-email">Email / メール</label>
+          <input id="f-email" type="email" placeholder="you@brand.com" required />
+        </div>
+
+        <div class="field">
+          <label for="f-svc">Engagement / ご相談内容</label>
+          <select id="f-svc">
+            <option value="">—</option>
+            <option>Content Strategy / コンテンツ戦略</option>
+            <option>SEO Consulting / SEOコンサルティング</option>
+            <option>Brand Storytelling / ブランドストーリー</option>
+            <option>Not sure yet / 検討中</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-msg">Message / メッセージ</label>
+          <textarea id="f-msg" rows="3" placeholder="A few sentences about your project..."></textarea>
+        </div>
+
+        <button type="submit" class="submit" id="submit-btn">
+          <span class="label-text">Send inquiry</span>
+          <span class="arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div>© 2026 STARANISE G.K. · 合同会社スターアニス</div>
+    <div>Tokyo · 東京</div>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+  /* nav scroll */
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* reveal on scroll */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* language toggle: both → en → jp → both */
+  const langBtn = document.getElementById('lang-toggle');
+  const states = ['both', 'en', 'jp'];
+  let lsIdx = 0;
+  langBtn.addEventListener('click', () => {
+    lsIdx = (lsIdx + 1) % states.length;
+    const s = states[lsIdx];
+    document.body.classList.remove('en-mode', 'jp-mode');
+    if (s === 'en') document.body.classList.add('en-mode');
+    if (s === 'jp') document.body.classList.add('jp-mode');
+    langBtn.querySelectorAll('span[data-lang]').forEach(sp => {
+      sp.classList.toggle('active', s === 'both' || sp.dataset.lang === s);
+    });
+    document.documentElement.lang = s === 'jp' ? 'ja' : 'en';
+  });
+
+  /* form */
+  const form = document.getElementById('contact-form');
+  const btn = document.getElementById('submit-btn');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    btn.classList.add('sent');
+    btn.querySelector('.label-text').textContent = 'Thank you — we\'ll be in touch';
+    btn.querySelector('.arrow').textContent = '✓';
+    setTimeout(() => {
+      btn.classList.remove('sent');
+      btn.querySelector('.label-text').textContent = 'Send inquiry';
+      btn.querySelector('.arrow').textContent = '→';
+      form.reset();
+    }, 3200);
+  });
+</script>
+
+</body>
+</html>
