@@ -381,7 +381,7 @@
   /* ========== SERVICES ========== */
   .services {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0;
     border-top: 1px solid var(--rule);
   }
@@ -393,6 +393,7 @@
     cursor: pointer;
   }
   .service + .service { padding-left: 36px; border-left: 1px solid var(--rule); }
+  .service:nth-child(odd):not(:first-child) { padding-left: 0; border-left: none; }
   .service:hover { padding-top: 48px; }
   .service-num {
     font-family: var(--mono);
@@ -458,10 +459,105 @@
     border-radius: 50%; background: var(--accent);
     flex: none;
   }
-  @media (max-width: 920px) {
+  @media (max-width: 720px) {
     .services { grid-template-columns: 1fr; }
     .service + .service { padding-left: 0; border-left: none; }
+    .service:nth-child(odd):not(:first-child) { padding-left: 0; }
     .service { padding: 40px 0; }
+  }
+
+  /* ========== WORK ========== */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .work-item {
+    background: var(--bg);
+    padding: 48px 40px;
+    transition: background .35s ease;
+  }
+  .work-item:hover { background: var(--paper); }
+  .work-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .work-cat {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .work-item h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2.2vw, 30px);
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    margin: 0 0 4px;
+  }
+  .work-item h3 em { font-style: italic; color: var(--accent); font-weight: 300; }
+  .work-jp-label {
+    font-family: var(--sans-jp);
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    margin: 0 0 20px;
+  }
+  .work-item p {
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+  }
+  .work-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .work-tags span {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: 1px solid var(--rule);
+    padding: 5px 12px;
+    border-radius: 999px;
+    color: var(--ink-soft);
+  }
+  .work-track {
+    margin-bottom: 56px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .work-track-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-right: 4px;
+  }
+  .work-track-item {
+    font-family: var(--sans-jp);
+    font-size: 13px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 5px 16px;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+  }
+  @media (max-width: 720px) {
+    .work-grid { grid-template-columns: 1fr; }
+    .work-item { padding: 36px 24px; }
   }
 
   /* ========== ABOUT ========== */
@@ -761,6 +857,7 @@
     </a>
     <nav class="nav-links">
       <a href="#services" class="hide-sm">Services</a>
+      <a href="#work" class="hide-sm">Work</a>
       <a href="#about" class="hide-sm">About</a>
       <a href="#contact" class="hide-sm">Contact</a>
       <button class="lang" id="lang-toggle" type="button" aria-label="Toggle language">
@@ -821,7 +918,7 @@
 
       <aside class="hero-meta reveal">
         <div>EST <b>2023</b></div>
-        <div>TOKYO · <b>JP</b></div>
+        <div>KANAGAWA · <b>JP</b></div>
         <div>合同会社 <b>スターアニス</b></div>
         <div style="margin-top: 18px; color: var(--accent);">— · — · —</div>
       </aside>
@@ -838,14 +935,26 @@
     <span><span class="dot"></span>Bilingual Content</span>
     <span><span class="dot"></span>Kanagawa Japan</span>
     <span><span class="dot"></span>Keyword Research</span>
+    <span><span class="dot"></span>GEO / AI Visibility</span>
     <span><span class="dot"></span>Content Architecture</span>
+    <span><span class="dot"></span>Photography / 写真撮影</span>
+    <span><span class="dot"></span>Cosmetics Consulting / 化粧品コンサルティング</span>
+    <span><span class="dot"></span>Newsletter / メルマガ制作</span>
+    <span><span class="dot"></span>Web Production / HP制作</span>
+    <span><span class="dot"></span>SNS Strategy / SNS施策</span>
     <span><span class="dot"></span>Editorial Strategy</span>
     <span><span class="dot"></span>SEO コンサルティング</span>
     <span><span class="dot"></span>Brand Storytelling</span>
     <span><span class="dot"></span>Bilingual Content</span>
     <span><span class="dot"></span>Kanagawa Japan</span>
     <span><span class="dot"></span>Keyword Research</span>
+    <span><span class="dot"></span>GEO / AI Visibility</span>
     <span><span class="dot"></span>Content Architecture</span>
+    <span><span class="dot"></span>Photography / 写真撮影</span>
+    <span><span class="dot"></span>Cosmetics Consulting / 化粧品コンサルティング</span>
+    <span><span class="dot"></span>Newsletter / メルマガ制作</span>
+    <span><span class="dot"></span>Web Production / HP制作</span>
+    <span><span class="dot"></span>SNS Strategy / SNS施策</span>
   </div>
 </div>
 
@@ -856,7 +965,7 @@
       <div class="section-index"><b>01</b>Services</div>
       <div>
         <h2 class="section-title">What we <em>practice</em>.</h2>
-        <p class="section-title-jp">三つの専門領域 — 編集・検索・物語。</p>
+        <p class="section-title-jp">四つの専門領域 — 編集・検索・物語・写真。</p>
       </div>
     </div>
 
@@ -887,19 +996,19 @@
           <span>S/02</span>
           <span class="arrow">→</span>
         </div>
-        <h3>SEO <em>Consulting</em></h3>
-        <p class="jp">検索戦略・SEOコンサルティング</p>
+        <h3>SEO <em>& GEO</em></h3>
+        <p class="jp">検索戦略・SEO / GEOコンサルティング</p>
         <p class="en-only">
-          Technical audits, keyword strategy, and competitive analysis tuned for the Japanese market — where category nuance and language matter.
+          Technical audits, keyword strategy, and competitive analysis tuned for the Japanese market — plus GEO (Generative Engine Optimization) to ensure your brand surfaces in AI-generated answers from tools like Perplexity, ChatGPT, and Google AI Overviews.
         </p>
         <p class="jp-only">
-          検索で見つけてもらうための設計と実装を行います。日本市場における検索行動の特性を踏まえたキーワード設計から、技術SEO監査まで一貫して担います。
+          検索で見つけてもらうための設計と実装に加え、GEO（生成エンジン最適化）にも対応します。PerplexityやChatGPT、Google AIオーバービューなどのAI回答にブランドが適切に登場するための施策を担います。
         </p>
         <ul>
           <li><span class="en-only">Technical SEO audits</span><span class="jp-only">テクニカルSEO監査</span></li>
           <li><span class="en-only">JP &amp; EN keyword research</span><span class="jp-only">日英キーワードリサーチ</span></li>
+          <li><span class="en-only">GEO — AI answer visibility strategy</span><span class="jp-only">GEO — AI回答への露出設計</span></li>
           <li><span class="en-only">Competitive landscape mapping</span><span class="jp-only">競合分析・ポジショニング</span></li>
-          <li><span class="en-only">On-page optimization</span><span class="jp-only">オンページ最適化</span></li>
         </ul>
       </article>
 
@@ -923,6 +1032,101 @@
           <li><span class="en-only">Bilingual EN / JP writing</span><span class="jp-only">日英バイリンガル対応</span></li>
         </ul>
       </article>
+
+      <article class="service reveal">
+        <div class="service-num">
+          <span>S/04</span>
+          <span class="arrow">→</span>
+        </div>
+        <h3>Visual <em>Photography</em></h3>
+        <p class="jp">写真撮影・ビジュアル制作</p>
+        <p class="en-only">
+          Brand and product photography shaped to match your editorial identity. Images made to live in lookbooks, campaigns, and long-form content — not just social feeds.
+        </p>
+        <p class="jp-only">
+          ブランドの世界観に沿った商品・ポートレート撮影を行います。コンテンツ戦略と一体になったビジュアルを、ルックブックからSNSまで一貫して制作します。
+        </p>
+        <ul>
+          <li><span class="en-only">Product photography</span><span class="jp-only">商品撮影</span></li>
+          <li><span class="en-only">Brand portrait sessions</span><span class="jp-only">ブランドポートレート</span></li>
+          <li><span class="en-only">Editorial &amp; lookbook shoots</span><span class="jp-only">ルックブック・エディトリアル撮影</span></li>
+          <li><span class="en-only">Social media visuals</span><span class="jp-only">SNS向けビジュアル制作</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="section" id="work" style="background: var(--paper); border-top: 1px solid var(--rule);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-index"><b>02</b>Work</div>
+      <div>
+        <h2 class="section-title">What we <em>deliver</em>.</h2>
+        <p class="section-title-jp">業種を問わず、ブランドの課題に向き合う。</p>
+      </div>
+    </div>
+
+    <div class="work-track reveal">
+      <span class="work-track-label">
+        <span class="en-only">Track record in</span>
+        <span class="jp-only">実績業界</span>
+      </span>
+      <span class="work-track-item">化粧品メーカー</span>
+      <span class="work-track-item">化粧品OEMメーカー</span>
+      <span class="work-track-item">レストラン・飲食</span>
+      <span class="work-track-item">料理コンテンツ 企画・撮影・編集</span>
+    </div>
+
+    <div class="work-grid">
+      <div class="work-item reveal">
+        <div class="work-num">W/01</div>
+        <div class="work-cat">Consulting</div>
+        <h3>Brand <em>Consulting</em></h3>
+        <p class="work-jp-label">事業コンサルティング</p>
+        <p class="en-only">Strategy and business development across industries — from concept refinement and product positioning to channel selection and go-to-market planning.</p>
+        <p class="jp-only">事業戦略をコンセプト設計から販路・マーケティング計画まで一貫してサポートします。立ち上げ期から成長期まで、実態に合ったアドバイスを行います。</p>
+        <div class="work-tags">
+          <span>Brand Strategy</span><span>Positioning</span><span>Go-to-Market</span>
+        </div>
+      </div>
+
+      <div class="work-item reveal">
+        <div class="work-num">W/02</div>
+        <div class="work-cat">Newsletter</div>
+        <h3>Email <em>Marketing</em></h3>
+        <p class="work-jp-label">メールマガジン制作・運用</p>
+        <p class="en-only">Newsletter design, copywriting, and ongoing management — crafted to deepen reader trust and drive repeat engagement across each send, whatever the category.</p>
+        <p class="jp-only">メールマガジンの企画・執筆・配信まで担います。読者との関係を育て、開封率とリピートにつながるコンテンツを業種を問わず継続的に制作します。</p>
+        <div class="work-tags">
+          <span>Copywriting</span><span>Editorial Design</span><span>CRM</span>
+        </div>
+      </div>
+
+      <div class="work-item reveal">
+        <div class="work-num">W/03</div>
+        <div class="work-cat">Web Production</div>
+        <h3>Website <em>Production</em></h3>
+        <p class="work-jp-label">Webサイト設計・制作</p>
+        <p class="en-only">End-to-end website production — from information architecture and copywriting to design direction and launch. Built to reflect the brand, not just the product.</p>
+        <p class="jp-only">ブランドの世界観をそのままWebへ。情報設計・ライティング・デザインディレクションから公開まで、Webサイト制作を一貫して手がけます。</p>
+        <div class="work-tags">
+          <span>IA / UX Writing</span><span>Design Direction</span><span>Launch</span>
+        </div>
+      </div>
+
+      <div class="work-item reveal">
+        <div class="work-num">W/04</div>
+        <div class="work-cat">Social Media</div>
+        <h3>SNS <em>Strategy</em></h3>
+        <p class="work-jp-label">SNS施策・コンテンツ制作</p>
+        <p class="en-only">Social media strategy and content production on Instagram, X, and LINE — from account concept and posting cadence to caption writing and visual direction.</p>
+        <p class="jp-only">Instagram・X・LINEにおけるSNS戦略を立案し、投稿コンテンツの制作・運用までを担います。アカウントのコンセプト設計から日々の発信まで対応します。</p>
+        <div class="work-tags">
+          <span>Instagram</span><span>X / LINE</span><span>Content Creation</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -931,7 +1135,7 @@
 <section class="section" id="about" style="background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="section-index"><b>02</b>About</div>
+      <div class="section-index"><b>03</b>About</div>
       <div>
         <h2 class="section-title">A practice, not an <em>agency</em>.</h2>
         <p class="section-title-jp">エージェンシーではなく、ひとつの実践として。</p>
@@ -959,7 +1163,7 @@
           STARANISE was founded on a simple belief: language is product. The way a brand describes a texture, a ritual, an ingredient — that is the brand. We help teams build that language with rigor, in both English and Japanese, across editorial, search, and story.
         </p>
         <p class="jp-only">
-          私たちは、ブランドの言葉と検索性に向き合うコンサルティング・チームです。香り、質感、成分、儀式 — それらをどう書くかが、ブランドそのものになる。長く読まれ、長く検索される編集物を、丁寧に組み立てます。
+          私たちは、ブランドの声に向き合うコンサルティング・チームです。理念、言葉、体験、物語 — それらをどう書くかが、ブランドそのものになる。長く読まれ、長く検索されるコンテンツを、丁寧につくります。
         </p>
         <p style="display:none" id="about-both-en" class="en-only">
           We keep our client list deliberately small. Every engagement gets our full attention — no handoffs, no templated thinking.
@@ -1003,7 +1207,7 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="section-index"><b>03</b>Contact</div>
+      <div class="section-index"><b>04</b>Contact</div>
       <div>
         <h2 class="section-title">Let's begin a <em>conversation</em>.</h2>
         <p class="section-title-jp">はじめての一通から、お話を始めましょう。</p>
@@ -1021,7 +1225,7 @@
         <dl class="contact-info">
           <div>
             <dt>Studio</dt>
-            <dd>Minato-ku, Tokyo<br />港区, 東京</dd>
+            <dd>Kanagawa, Japan<br />神奈川県</dd>
           </div>
           <div>
             <dt>Hours</dt>
@@ -1071,6 +1275,7 @@
             <option>Content Strategy / コンテンツ戦略</option>
             <option>SEO Consulting / SEOコンサルティング</option>
             <option>Brand Storytelling / ブランドストーリー</option>
+            <option>Photography / 写真撮影</option>
             <option>Not sure yet / 検討中</option>
           </select>
         </div>
