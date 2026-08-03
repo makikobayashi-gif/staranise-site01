@@ -838,10 +838,6 @@
   /* ========== LANG TOGGLE ========== */
   body.jp-mode .en-only { display: none; }
   body.en-mode .jp-only { display: none; }
-  body:not(.fr-mode) .fr-only { display: none; }
-  body.fr-mode .en-only { display: none; }
-  body.fr-mode .jp-only { display: none; }
-  body.fr-mode .not-fr { display: none; }
 </style>
 </head>
 <body>
@@ -865,9 +861,9 @@
       <a href="#about" class="hide-sm">About</a>
       <a href="#contact" class="hide-sm">Contact</a>
       <button class="lang" id="lang-toggle" type="button" aria-label="Toggle language">
-        <span data-lang="en" class="active">EN</span><span>/</span><span data-lang="jp">JP</span><span>/</span><span data-lang="fr">FR</span>
+        <span data-lang="en" class="active">EN</span><span>/</span><span data-lang="jp">JP</span>
       </button>
-      <a href="#contact" class="nav-cta"><span class="not-fr">Get in touch</span><span class="fr-only">Nous contacter</span></a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
     </nav>
   </div>
 </header>
@@ -897,14 +893,13 @@
           brands.
         </h1>
         <p class="catchcopy-jp reveal">
-          <span class="not-fr">コンテンツで、<span class="accent">ブランドを育てる。</span></span><span class="fr-only">Le contenu <span class="accent">façonne les marques.</span></span>
+          コンテンツで、<span class="accent">ブランドを育てる。</span>
         </p>
 
         <div class="hero-divider reveal"></div>
         <p class="hero-lede reveal">
           <span class="en-only">STARANISE G.K. is a Tokyo and Kanagawa-based content &amp; SEO studio helping brands build lasting presence — in both English and Japanese.</span>
           <span class="jp-only">東京、神奈川を拠点に、日英バイリンガルのコンテンツ戦略・SEO・ブランドストーリーを手がけるスタジオです。</span>
-          <span class="fr-only">STARANISE G.K. est un studio de contenu &amp; SEO basé à Tokyo et Kanagawa, qui aide les marques à construire une présence durable — en anglais et en japonais.</span>
           <span class="en-only jp-only" style="display:block; margin-top: 12px;"><!-- both mode fallback --></span>
         </p>
         <p class="hero-lede reveal" style="display:none" id="hero-lede-both">
@@ -970,7 +965,7 @@
       <div class="section-index"><b>01</b>Services</div>
       <div>
         <h2 class="section-title">What we <em>practice</em>.</h2>
-        <p class="section-title-jp"><span class="not-fr">四つの専門領域 — 編集・検索・物語・写真。</span><span class="fr-only">Quatre domaines d'expertise — édition, recherche, récit, photographie.</span></p>
+        <p class="section-title-jp">四つの専門領域 — 編集・検索・物語・写真。</p>
       </div>
     </div>
 
@@ -981,21 +976,18 @@
           <span class="arrow">→</span>
         </div>
         <h3>Content <em>Strategy</em></h3>
-        <p class="jp"><span class="not-fr">コンテンツ戦略・編集設計</span><span class="fr-only">Stratégie de contenu &amp; conception éditoriale</span></p>
+        <p class="jp">コンテンツ戦略・編集設計</p>
         <p class="en-only">
           Editorial planning rooted in audience research and brand voice. From content calendars to long-form pillars — built to last beyond a single campaign.
         </p>
         <p class="jp-only">
           「何を、誰に、どう伝えるか」を起点に、ブランドの言葉を設計します。単発のコンテンツ制作ではなく、長く機能する編集の仕組みをつくることが私たちの仕事です。
         </p>
-        <p class="fr-only">
-          Planification éditoriale ancrée dans la recherche d'audience et la voix de marque. Des calendriers de contenu aux piliers long format — conçus pour durer bien au-delà d'une seule campagne.
-        </p>
         <ul>
-          <li><span class="en-only">Audience &amp; persona research</span><span class="jp-only">オーディエンス・ペルソナ設計</span><span class="fr-only">Recherche d'audience &amp; personas</span></li>
-          <li><span class="en-only">Editorial calendar design</span><span class="jp-only">編集カレンダー設計</span><span class="fr-only">Conception du calendrier éditorial</span></li>
-          <li><span class="en-only">Brand voice &amp; tone systems</span><span class="jp-only">ブランドボイス・トーン策定</span><span class="fr-only">Systèmes de voix &amp; tonalité de marque</span></li>
-          <li><span class="en-only">Content auditing</span><span class="jp-only">コンテンツ監査・ギャップ分析</span><span class="fr-only">Audit de contenu &amp; analyse des lacunes</span></li>
+          <li><span class="en-only">Audience &amp; persona research</span><span class="jp-only">オーディエンス・ペルソナ設計</span></li>
+          <li><span class="en-only">Editorial calendar design</span><span class="jp-only">編集カレンダー設計</span></li>
+          <li><span class="en-only">Brand voice &amp; tone systems</span><span class="jp-only">ブランドボイス・トーン策定</span></li>
+          <li><span class="en-only">Content auditing</span><span class="jp-only">コンテンツ監査・ギャップ分析</span></li>
         </ul>
       </article>
 
@@ -1005,21 +997,18 @@
           <span class="arrow">→</span>
         </div>
         <h3>SEO <em>& GEO</em></h3>
-        <p class="jp"><span class="not-fr">検索戦略・SEO / GEOコンサルティング</span><span class="fr-only">Stratégie de référencement &amp; conseil SEO / GEO</span></p>
+        <p class="jp">検索戦略・SEO / GEOコンサルティング</p>
         <p class="en-only">
           Technical audits, keyword strategy, and competitive analysis tuned for the Japanese market — plus GEO (Generative Engine Optimization) to ensure your brand surfaces in AI-generated answers from tools like Perplexity, ChatGPT, and Google AI Overviews.
         </p>
         <p class="jp-only">
           検索で見つけてもらうための設計と実装に加え、GEO（生成エンジン最適化）にも対応します。PerplexityやChatGPT、Google AIオーバービューなどのAI回答にブランドが適切に登場するための施策を担います。
         </p>
-        <p class="fr-only">
-          Audits techniques, stratégie de mots-clés et analyse concurrentielle adaptés au marché japonais — plus GEO (Generative Engine Optimization) pour garantir la visibilité de votre marque dans les réponses IA de Perplexity, ChatGPT et Google.
-        </p>
         <ul>
-          <li><span class="en-only">Technical SEO audits</span><span class="jp-only">テクニカルSEO監査</span><span class="fr-only">Audits SEO techniques</span></li>
-          <li><span class="en-only">JP &amp; EN keyword research</span><span class="jp-only">日英キーワードリサーチ</span><span class="fr-only">Recherche de mots-clés JP &amp; EN</span></li>
-          <li><span class="en-only">GEO — AI answer visibility strategy</span><span class="jp-only">GEO — AI回答への露出設計</span><span class="fr-only">GEO — visibilité dans les réponses IA</span></li>
-          <li><span class="en-only">Competitive landscape mapping</span><span class="jp-only">競合分析・ポジショニング</span><span class="fr-only">Cartographie du paysage concurrentiel</span></li>
+          <li><span class="en-only">Technical SEO audits</span><span class="jp-only">テクニカルSEO監査</span></li>
+          <li><span class="en-only">JP &amp; EN keyword research</span><span class="jp-only">日英キーワードリサーチ</span></li>
+          <li><span class="en-only">GEO — AI answer visibility strategy</span><span class="jp-only">GEO — AI回答への露出設計</span></li>
+          <li><span class="en-only">Competitive landscape mapping</span><span class="jp-only">競合分析・ポジショニング</span></li>
         </ul>
       </article>
 
@@ -1029,21 +1018,18 @@
           <span class="arrow">→</span>
         </div>
         <h3>Brand <em>Storytelling</em></h3>
-        <p class="jp"><span class="not-fr">ブランドの言語化・ストーリー設計</span><span class="fr-only">Mise en mots du récit de marque</span></p>
+        <p class="jp">ブランドの言語化・ストーリー設計</p>
         <p class="en-only">
           Long-form narratives that tie product to point of view. We write the through-line that makes your brand worth remembering — in both languages.
         </p>
         <p class="jp-only">
           商品の背景にある思想・素材・こだわりを、読まれる言葉に変えます。ヒアリングから始まり、ブランドの強みを言語化し、伝わる構造をつくることを大切にしています。
         </p>
-        <p class="fr-only">
-          Des récits long format qui relient le produit à un point de vue. Nous rédigeons le fil conducteur qui rend votre marque mémorable — dans les deux langues.
-        </p>
         <ul>
-          <li><span class="en-only">Origin &amp; founder narratives</span><span class="jp-only">ブランドの強み・世界観の言語化</span><span class="fr-only">Récits d'origine &amp; de fondateurs</span></li>
-          <li><span class="en-only">Brand voice guide</span><span class="jp-only">創業ストーリー・成分ストーリー</span><span class="fr-only">Guide de la voix de marque</span></li>
-          <li><span class="en-only">Long-form editorial</span><span class="jp-only">長文コンテンツ制作</span><span class="fr-only">Éditorial long format</span></li>
-          <li><span class="en-only">Bilingual EN / JP writing</span><span class="jp-only">日英バイリンガル対応</span><span class="fr-only">Rédaction bilingue EN / JP</span></li>
+          <li><span class="en-only">Origin &amp; founder narratives</span><span class="jp-only">ブランドの強み・世界観の言語化</span></li>
+          <li><span class="en-only">Brand voice guide</span><span class="jp-only">創業ストーリー・成分ストーリー</span></li>
+          <li><span class="en-only">Long-form editorial</span><span class="jp-only">長文コンテンツ制作</span></li>
+          <li><span class="en-only">Bilingual EN / JP writing</span><span class="jp-only">日英バイリンガル対応</span></li>
         </ul>
       </article>
 
@@ -1053,21 +1039,18 @@
           <span class="arrow">→</span>
         </div>
         <h3>Visual <em>Photography</em></h3>
-        <p class="jp"><span class="not-fr">写真撮影・ビジュアル制作</span><span class="fr-only">Photographie de marque &amp; production visuelle</span></p>
+        <p class="jp">写真撮影・ビジュアル制作</p>
         <p class="en-only">
           Brand and product photography shaped to match your editorial identity. Images made to live in lookbooks, campaigns, and long-form content — not just social feeds.
         </p>
         <p class="jp-only">
           ブランドの世界観に沿った商品・ポートレート撮影を行います。コンテンツ戦略と一体になったビジュアルを、カタログ撮影からSNSまで一貫して制作します。
         </p>
-        <p class="fr-only">
-          Photographie de marque et de produit façonnée pour correspondre à votre identité éditoriale. Des images conçues pour les lookbooks, les campagnes et les contenus long format — pas seulement les réseaux sociaux.
-        </p>
         <ul>
-          <li><span class="en-only">Product photography</span><span class="jp-only">商品撮影</span><span class="fr-only">Photographie de produit</span></li>
-          <li><span class="en-only">Brand portrait sessions</span><span class="jp-only">ブランドポートレート</span><span class="fr-only">Séances portrait de marque</span></li>
-          <li><span class="en-only">Editorial &amp; lookbook shoots</span><span class="jp-only">カタログ・エディトリアル撮影</span><span class="fr-only">Prises de vue éditoriales &amp; lookbook</span></li>
-          <li><span class="en-only">Social media visuals</span><span class="jp-only">SNS向けビジュアル制作</span><span class="fr-only">Visuels pour les réseaux sociaux</span></li>
+          <li><span class="en-only">Product photography</span><span class="jp-only">商品撮影</span></li>
+          <li><span class="en-only">Brand portrait sessions</span><span class="jp-only">ブランドポートレート</span></li>
+          <li><span class="en-only">Editorial &amp; lookbook shoots</span><span class="jp-only">カタログ・エディトリアル撮影</span></li>
+          <li><span class="en-only">Social media visuals</span><span class="jp-only">SNS向けビジュアル制作</span></li>
         </ul>
       </article>
     </div>
@@ -1081,7 +1064,7 @@
       <div class="section-index"><b>02</b>Work</div>
       <div>
         <h2 class="section-title">What we <em>deliver</em>.</h2>
-        <p class="section-title-jp"><span class="not-fr">業種を問わず、ブランドの課題に向き合う。</span><span class="fr-only">Face aux défis de marque, tous secteurs confondus.</span></p>
+        <p class="section-title-jp">業種を問わず、ブランドの課題に向き合う。</p>
       </div>
     </div>
 
@@ -1089,7 +1072,6 @@
       <span class="work-track-label">
         <span class="en-only">Track record in</span>
         <span class="jp-only">実績業界</span>
-        <span class="fr-only">Secteurs d'expertise</span>
       </span>
       <span class="work-track-item">料理コンテンツ 企画・撮影・編集</span>
       <span class="work-track-item">化粧品OEMメーカー</span>
@@ -1102,10 +1084,9 @@
         <div class="work-num">W/01</div>
         <div class="work-cat">Consulting</div>
         <h3>Brand <em>Consulting</em></h3>
-        <p class="work-jp-label"><span class="not-fr">事業コンサルティング</span><span class="fr-only">Conseil en stratégie de marque</span></p>
+        <p class="work-jp-label">事業コンサルティング</p>
         <p class="en-only">Strategy and business development across industries — from concept refinement and product positioning to channel selection and go-to-market planning.</p>
         <p class="jp-only">事業戦略をコンセプト設計から販路・マーケティング計画まで一貫してサポートします。立ち上げ期から成長期まで、実態に合ったアドバイスを行います。</p>
-        <p class="fr-only">Stratégie et développement commercial tous secteurs — du raffinage de concept et du positionnement produit au choix des canaux et à la planification go-to-market.</p>
         <div class="work-tags">
           <span>Brand Strategy</span><span>Positioning</span><span>Go-to-Market</span>
         </div>
@@ -1115,10 +1096,9 @@
         <div class="work-num">W/02</div>
         <div class="work-cat">Newsletter</div>
         <h3>Email <em>Marketing</em></h3>
-        <p class="work-jp-label"><span class="not-fr">メールマガジン制作・運用</span><span class="fr-only">Email marketing &amp; newsletters</span></p>
+        <p class="work-jp-label">メールマガジン制作・運用</p>
         <p class="en-only">Newsletter design, copywriting, and ongoing management — crafted to deepen reader trust and drive repeat engagement across each send, whatever the category.</p>
         <p class="jp-only">メールマガジンの企画・執筆・配信まで担います。読者との関係を育て、開封率とリピートにつながるコンテンツを業種を問わず継続的に制作します。</p>
-        <p class="fr-only">Conception, rédaction et gestion continue de newsletters — pour approfondir la confiance des lecteurs et stimuler l'engagement à chaque envoi, quel que soit le secteur.</p>
         <div class="work-tags">
           <span>Copywriting</span><span>Editorial Design</span><span>CRM</span>
         </div>
@@ -1128,10 +1108,9 @@
         <div class="work-num">W/03</div>
         <div class="work-cat">Web Production</div>
         <h3>Website <em>Production</em></h3>
-        <p class="work-jp-label"><span class="not-fr">Webサイト設計・制作</span><span class="fr-only">Production de sites web</span></p>
+        <p class="work-jp-label">Webサイト設計・制作</p>
         <p class="en-only">End-to-end website production — from information architecture and copywriting to design direction and launch. Built to reflect the brand, not just the product.</p>
         <p class="jp-only">ブランドの世界観をそのままWebへ。情報設計・ライティング・デザインディレクションから公開まで、Webサイト制作を一貫して手がけます。</p>
-        <p class="fr-only">Production de site web de A à Z — de l'architecture de l'information et la rédaction à la direction artistique et au lancement. Conçu pour refléter la marque, pas seulement le produit.</p>
         <div class="work-tags">
           <span>IA / UX Writing</span><span>Design Direction</span><span>Launch</span>
         </div>
@@ -1141,10 +1120,9 @@
         <div class="work-num">W/04</div>
         <div class="work-cat">Social Media</div>
         <h3>SNS <em>Strategy</em></h3>
-        <p class="work-jp-label"><span class="not-fr">SNS施策・コンテンツ制作</span><span class="fr-only">Stratégie réseaux sociaux &amp; contenu</span></p>
+        <p class="work-jp-label">SNS施策・コンテンツ制作</p>
         <p class="en-only">Social media strategy and content production on Instagram, X, and LINE — from account concept and posting cadence to caption writing and visual direction.</p>
         <p class="jp-only">Instagram・X・LINEにおけるSNS戦略を立案し、投稿コンテンツの制作・運用までを担います。アカウントのコンセプト設計から日々の発信まで対応します。</p>
-        <p class="fr-only">Stratégie de médias sociaux et production de contenu sur Instagram, X et LINE — du concept de compte et de la cadence de publication à la rédaction de légendes et à la direction visuelle.</p>
         <div class="work-tags">
           <span>Instagram</span><span>X / LINE</span><span>Content Creation</span>
         </div>
@@ -1160,7 +1138,7 @@
       <div class="section-index"><b>03</b>About</div>
       <div>
         <h2 class="section-title">A practice, not an <em>agency</em>.</h2>
-        <p class="section-title-jp"><span class="not-fr">代理ではなく、共に実践する。</span><span class="fr-only">Une pratique, pas une agence.</span></p>
+        <p class="section-title-jp">代理ではなく、共に実践する。</p>
       </div>
     </div>
 
@@ -1172,16 +1150,13 @@
 
       <div class="about-body reveal">
         <p class="lead">
-          <span class="not-fr">We work with brands who believe content isn't decoration — it's <em>infrastructure</em>.</span><span class="fr-only">Nous travaillons avec des marques qui croient que le contenu n'est pas une décoration — c'est une <em>infrastructure</em>.</span>
+          We work with brands who believe content isn't decoration — it's <em>infrastructure</em>.
         </p>
         <p class="en-only">
           STARANISE was founded on a simple belief: language is product. The way a brand describes a texture, a ritual, an ingredient — that is the brand. We help teams build that language with rigor, in both English and Japanese, across editorial, search, and story.
         </p>
         <p class="jp-only">
           私たちは、ブランドの言葉に向き合うコンサルティング・チームです。理念、姿勢、物語 — それらをどう書くかが、ブランドそのものになる。長く読まれ、長く検索されるコンテンツを、丁寧に組み立てます。
-        </p>
-        <p class="fr-only">
-          STARANISE a été fondé sur une conviction simple : le langage est un produit. La façon dont une marque décrit une texture, un rituel, un ingrédient — c'est cela la marque. Nous aidons les équipes à construire ce langage avec rigueur, en anglais et en japonais, à travers l'éditorial, la recherche et le récit.
         </p>
         <p style="display:none" id="about-both-en" class="en-only">
           We keep our client list deliberately small. Every engagement gets our full attention — no handoffs, no templated thinking.
@@ -1197,7 +1172,6 @@
             <p>
               <span class="en-only">Long-form thinking. Few projects, well done — over scaled volume.</span>
               <span class="jp-only">長期的な権威は、静かに、時間をかけて築かれる。</span>
-              <span class="fr-only">Réflexion approfondie. Peu de projets, bien faits — plutôt que du volume à grande échelle.</span>
             </p>
           </div>
           <div class="principle">
@@ -1206,7 +1180,6 @@
             <p>
               <span class="en-only">Every piece is shaped for both EN and JP audiences from the first draft.</span>
               <span class="jp-only">すべての戦略は最初から日英両言語を前提に設計する。</span>
-              <span class="fr-only">Chaque pièce est conçue pour les publics EN et JP dès la première ébauche.</span>
             </p>
           </div>
           <div class="principle">
@@ -1215,7 +1188,6 @@
             <p>
               <span class="en-only">We go as deep as each industry requires — no surface-level content.</span>
               <span class="jp-only">各業界が求める深度まで踏み込む。表面的なコンテンツは作らない。</span>
-              <span class="fr-only">Nous allons aussi loin que chaque secteur le requiert — pas de contenu superficiel.</span>
             </p>
           </div>
         </div>
@@ -1231,7 +1203,7 @@
       <div class="section-index"><b>04</b>Contact</div>
       <div>
         <h2 class="section-title">Let's begin a <em>conversation</em>.</h2>
-        <p class="section-title-jp"><span class="not-fr">お気軽にお声がけください。</span><span class="fr-only">Commençons une conversation.</span></p>
+        <p class="section-title-jp">お気軽にお声がけください。</p>
       </div>
     </div>
 
@@ -1241,7 +1213,6 @@
         <p class="contact-sub">
           <span class="en-only">Tell us about your brand, your timeline, and what you're hoping to achieve.</span>
           <span class="jp-only">ブランドのこと、ご予算感、想い描いていること、お聞かせください。</span>
-          <span class="fr-only">Parlez-nous de votre marque, de votre calendrier et de ce que vous souhaitez accomplir.</span>
         </p>
 
         <dl class="contact-info">
@@ -1260,12 +1231,10 @@
         <h4>
           <span class="en-only">Project inquiry</span>
           <span class="jp-only">プロジェクトのご相談</span>
-          <span class="fr-only">Demande de projet</span>
         </h4>
         <div class="h-jp">
           <span class="en-only">プロジェクトのご相談</span>
           <span class="jp-only">Project inquiry</span>
-          <span class="fr-only">プロジェクトのご相談</span>
         </div>
 
         <div class="field-row">
@@ -1302,7 +1271,7 @@
         </div>
 
         <button type="submit" class="submit" id="submit-btn">
-          <span class="label-text"><span class="not-fr">Send inquiry</span><span class="fr-only">Envoyer la demande</span></span>
+          <span class="label-text">Send inquiry</span>
           <span class="arrow">→</span>
         </button>
       </form>
@@ -1333,21 +1302,20 @@
   }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  /* language toggle: both → en → jp → fr → both */
+  /* language toggle: both → en → jp → both */
   const langBtn = document.getElementById('lang-toggle');
-  const states = ['both', 'en', 'jp', 'fr'];
+  const states = ['both', 'en', 'jp'];
   let lsIdx = 0;
   langBtn.addEventListener('click', () => {
     lsIdx = (lsIdx + 1) % states.length;
     const s = states[lsIdx];
-    document.body.classList.remove('en-mode', 'jp-mode', 'fr-mode');
+    document.body.classList.remove('en-mode', 'jp-mode');
     if (s === 'en') document.body.classList.add('en-mode');
     if (s === 'jp') document.body.classList.add('jp-mode');
-    if (s === 'fr') document.body.classList.add('fr-mode');
     langBtn.querySelectorAll('span[data-lang]').forEach(sp => {
       sp.classList.toggle('active', s === 'both' || sp.dataset.lang === s);
     });
-    document.documentElement.lang = s === 'jp' ? 'ja' : s === 'fr' ? 'fr' : 'en';
+    document.documentElement.lang = s === 'jp' ? 'ja' : 'en';
   });
 
   /* form */
@@ -1355,13 +1323,12 @@
   const btn = document.getElementById('submit-btn');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const isFr = document.body.classList.contains('fr-mode');
     btn.classList.add('sent');
-    btn.querySelector('.label-text').innerHTML = isFr ? 'Merci — nous reviendrons vers vous' : 'Thank you — we\'ll be in touch';
+    btn.querySelector('.label-text').textContent = 'Thank you — we\'ll be in touch';
     btn.querySelector('.arrow').textContent = '✓';
     setTimeout(() => {
       btn.classList.remove('sent');
-      btn.querySelector('.label-text').innerHTML = '<span class="not-fr">Send inquiry</span><span class="fr-only">Envoyer la demande</span>';
+      btn.querySelector('.label-text').textContent = 'Send inquiry';
       btn.querySelector('.arrow').textContent = '→';
       form.reset();
     }, 3200);
