@@ -656,6 +656,43 @@
     .principles { grid-template-columns: 1fr; gap: 20px; }
   }
 
+  /* ========== COMPANY ========== */
+  .company-table {
+    margin: 0;
+    border-top: 1px solid var(--rule);
+    max-width: 920px;
+  }
+  .company-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .company-row dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-top: 4px;
+  }
+  .company-row dt .jp-only { font-family: var(--sans-jp); letter-spacing: 0.08em; text-transform: none; font-size: 13px; }
+  .company-row dt span + span::before { content: " / "; opacity: .5; }
+  .company-row dd {
+    margin: 0;
+    font-family: var(--sans-jp);
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: var(--ink);
+  }
+  .company-row dd .sub { display: block; font-size: 13px; color: var(--ink-soft); }
+  .company-row dd a { border-bottom: 1px solid var(--spice); transition: color .2s ease; }
+  .company-row dd a:hover { color: var(--spice); }
+  @media (max-width: 720px) {
+    .company-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
+  }
+
   /* ========== CONTACT ========== */
   .contact {
     background: var(--ink);
@@ -863,6 +900,7 @@
       <a href="#services" class="hide-sm">Services</a>
       <a href="#work" class="hide-sm">Work</a>
       <a href="#about" class="hide-sm">About</a>
+      <a href="#company" class="hide-sm">Company</a>
       <a href="#contact" class="hide-sm">Contact</a>
       <button class="lang" id="lang-toggle" type="button" aria-label="Toggle language">
         <span data-lang="en" class="active">EN</span><span>/</span><span data-lang="jp">JP</span><span>/</span><span data-lang="fr">FR</span>
@@ -1224,11 +1262,58 @@
   </div>
 </section>
 
+<!-- ============ COMPANY ============ -->
+<section class="section" id="company">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-index"><b>04</b>Company</div>
+      <div>
+        <h2 class="section-title">Company <em>profile</em>.</h2>
+        <p class="section-title-jp"><span class="not-fr">会社概要</span><span class="fr-only">Présentation de la société</span></p>
+      </div>
+    </div>
+
+    <dl class="company-table reveal">
+      <div class="company-row">
+        <dt><span class="en-only">Company</span><span class="jp-only">社名</span><span class="fr-only">Société</span></dt>
+        <dd>合同会社スターアニス<span class="sub">STARANISE G.K.</span></dd>
+      </div>
+      <div class="company-row">
+        <dt><span class="en-only">Representative</span><span class="jp-only">代表者</span><span class="fr-only">Représentante</span></dt>
+        <dd>代表　川邊 真木子<span class="sub">Makiko Kawabe</span></dd>
+      </div>
+      <div class="company-row">
+        <dt><span class="en-only">Address</span><span class="jp-only">所在地</span><span class="fr-only">Adresse</span></dt>
+        <dd>神奈川県鎌倉市七里ヶ浜東4-10-10<span class="sub">4-10-10 Shichirigahama-Higashi, Kamakura, Kanagawa, Japan</span></dd>
+      </div>
+      <div class="company-row">
+        <dt><span class="en-only">Business</span><span class="jp-only">事業内容</span><span class="fr-only">Activités</span></dt>
+        <dd>
+          <span class="jp-only">コンテンツ戦略の立案と制作支援、SEO、デジタルマーケティングの支援、Webサービスの企画・開発・運営</span>
+          <span class="sub en-only">Content strategy and production, SEO, digital marketing support, and the planning, development and operation of web services</span>
+          <span class="fr-only">Stratégie et production de contenu, SEO, accompagnement en marketing digital, conception, développement et exploitation de services web</span>
+        </dd>
+      </div>
+      <div class="company-row">
+        <dt><span class="en-only">Our service</span><span class="jp-only">運営サービス</span><span class="fr-only">Service exploité</span></dt>
+        <dd>
+          <a href="https://gourmet.starani.se" target="_blank" rel="noopener">gourmet.starani.se</a>
+          <span class="sub jp-only">地図で飲食店を探すWebサービス</span><span class="sub en-only">A map for finding restaurants nearby</span><span class="sub fr-only">Une carte pour trouver des restaurants à proximité</span>
+        </dd>
+      </div>
+      <div class="company-row">
+        <dt><span class="en-only">Contact</span><span class="jp-only">お問い合わせ</span><span class="fr-only">Contact</span></dt>
+        <dd><a href="mailto:makikobayashi@gmail.com">makikobayashi@gmail.com</a></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
 <!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="section-index"><b>04</b>Contact</div>
+      <div class="section-index"><b>05</b>Contact</div>
       <div>
         <h2 class="section-title">Let's begin a <em>conversation</em>.</h2>
         <p class="section-title-jp"><span class="not-fr">お気軽にお声がけください。</span><span class="fr-only">Commençons une conversation.</span></p>
